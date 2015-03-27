@@ -51,6 +51,12 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] ranks2 = {"jack","queen","king","Ace","2","3","4","5","6","7","8","9","10"};
+		String[] suits2 = {"clubs","spades","diamonds","hearts"};
+		int[] pointValues2 = {11,12,13,1,2,3,4,5,6,7,8,9,10};
+		Deck cards = new Deck(ranks2, suits2, pointValues2);
+		cards.shuffle();
+		System.out.println(cards.toString());
+		
 	}
 }

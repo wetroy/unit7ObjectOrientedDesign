@@ -1,8 +1,10 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
 public class Shuffler {
-
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
@@ -49,8 +51,22 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void perfectShuffle(int[] values) 
+	{	    
+		int[] shuffled = new int[52];
+		int k = 0;
+		for(int j = 0; j<=25; j++)
+		{
+		    shuffled[k] = values[j];
+		    k += 2;
+		  }
+		k = 1;
+		for(int j = 26; j <= 51; j++)
+		{
+		    shuffled[k] = values[j];
+		    k += 2;
+		  }
+		values = shuffled;
 	}
 
 	/**
@@ -64,7 +80,15 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void selectionShuffle(int[] values) 
+	{
+	    int[] shuffled = new int[52];
+		Random rnd = new Random();
+		for(int i = 51; i > 0; i--)
+		{
+		        int k = rnd.nextInt(52);
+		        shuffled[i] = values[k];
+		      }
+		values = shuffled;
 	}
 }
